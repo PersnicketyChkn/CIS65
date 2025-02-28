@@ -1,7 +1,7 @@
+#include "ItemType.h"
+
 #pragma once
-class PrintNumbers
+class Class : ItemType
 {
-public:
-	void Print(int min, int max);
 };
 
