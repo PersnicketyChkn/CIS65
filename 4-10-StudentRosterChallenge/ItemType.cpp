@@ -5,26 +5,32 @@
 
 ItemType::ItemType()
 { 
-  value = 0;
+  ID = 0;
+}
+
+ItemType::ItemType(int id, std::string name)
+{
+    ID = id;
+    Name = name;
 }
 
 RelationType ItemType::ComparedTo(ItemType otherItem) const 
 {
-  if (value < otherItem.value)
+  if (ID < otherItem.ID)
     return LESS;
-  else if (value > otherItem.value)
+  else if (ID > otherItem.ID)
     return GREATER;
   else return EQUAL;
 }
 
 void ItemType::Initialize(int number) 
 {
-  value = number;
+  ID = number;
 }
 
 void ItemType::Print(std::ostream& out) const 
 // pre:  out has been opened.
 // post: value has been sent to the stream out.
 {
-  out << value;
+  out << ID;
 }
